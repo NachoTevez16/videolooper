@@ -16,6 +16,10 @@ with open('playlist.txt', 'w') as f:
 	for url in urls:
 		f.write(f"{url}\n")
 EOF
+# Elimina cualquier \r de los nombres de archivo
+for file in *$'\r'; do
+    mv "$file" "$(echo $file | tr -d '\r')"
+done
 
 #mezclo las url
 shuf playlist.txt > playlist_random.txt
