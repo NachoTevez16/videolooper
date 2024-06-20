@@ -4,8 +4,7 @@ playlist_url=https://www.youtube.com/playlist?list=PL5vXZMBWYVkPACU409MVu08SMG8e
 yt-dlp -J --flat-playlist "$playlist_url" > playlist_data.json
 
 #procesa el json con python para sacar las urls
-python3 - << EOF
-import sys
+python3 << EOF
 import json
 
 with open('playlist_data.json', 'r') as f:
