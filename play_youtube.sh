@@ -33,7 +33,7 @@ if [ ! -s "$TEMP_LIST" ]; then
 fi
 
 # Reproducir los URLs con mpv en bucle (generar logs detallados)
-mpv --log-file=mpv.log --loop=inf --playlist="$TEMP_LIST"
+mpv --fullscreen --log-file=mpv.log --loop=inf --playlist="$TEMP_LIST"
 
 # Limpiar el archivo temporal
 rm "$TEMP_LIST"
