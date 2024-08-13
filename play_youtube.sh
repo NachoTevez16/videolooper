@@ -32,8 +32,8 @@ if [ ! -s "$TEMP_LIST" ]; then
   exit 1
 fi
 
-# Reproducir los URLs con mpv en bucle (generar logs detallados)
-mpv --fullscreen --log-file=mpv.log --loop=inf --playlist="$TEMP_LIST"
+# Reproducir los URLs con cvlc en bucle
+cat "$TEMP_LIST" | cvlc --fullscreen --loop - 2> cvlc.log
 
 # Limpiar el archivo temporal
 rm "$TEMP_LIST"
